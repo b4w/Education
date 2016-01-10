@@ -1,0 +1,566 @@
+### Термины и сокращения 
+**JDBC** - Java Database Connectivity. Входит в состав стандартной библиотеки (поставляется вместе с JRE или JDK). Собраны все необходимые классы и интерфейсы для работы с БД. Некоторая API, которая находиться между программистом и разработчиком БД. 
+
+**ORM** - Object Relational Mapping. С одной стороны - объекты, с другой - реляционные схемы. ORM - это то, что перекладывает одно в другое. 
+
+**JPA** - Java Persistency API. Часть стандартной библиотеки, является набором интерфейсов, классов и аннотаций, которые разработчики языка дали для разработчиков ORM-решений. Как в примере выше, JPA - прослойка между программистом и разработчиком ORM-решений.
+
+**Hibernate** - популярная библиотека для ORM, implements JPA. 
+
+**DAO** - Data Access Object. Объект, позволяющий нам получить доступ к данным либо записать наши данные в базу. 
+
+### JDBC
+Java Database Connectivity - API для работы с БД из приложения.
+- предназначена для работы с реляционными БД
+- предоставляет методы для получения и обновления данных в БД
+- не зависит от конкретного типа БД
+
+JDBC - придумана для работы с реляционными БД. При работе с JDBC становится не важно с какой именно БД нам приходится работать. 
+
+### JDBC API
+- **Connection**
+Объект отвечает за соединение с БД и режим работы с ней. 
+- **Statement** 
+Объект представляет выражение обращение к БД. 
+- **ResultSet**
+Объект с результатом запроса, который вернула БД. 
+
+### JDBC Driver Manager
+Название класса драйвера: com.mysql.jdbc.Driver. 
+Удобно создавать объект класса Driver через reflection, т.к. сам путь к драйверу можно перенести в config и при необходимости поменять его на другой.  
+Создаем объект класса при помощи reflection:
+```java
+(Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
+```
+
+java.sql.DriverManager - класс helper для работы с драйверами
+Регистрируем драйвер:
+```java
+DriverManager.registerDriver(driver);
+```
+
+### Connection
+Пример подключения к БД:
+```java
+Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver).newInstanse();
+DriverManager.registerDriver(driver);
+
+StringBuilder url = new StringBUilder();
+
+url
+.append("jdbc:mysql://")	//db type
+.append("localhost:")		//host name
+.append("3306/")		//port
+.append("db_example?")		//db name
+.append("user=tully&")		//login
+.append("password=tully");	//password
+
+// URL: "jdbc:mysql://localhost:2206/db_example?user=tully&password=tully"
+Connection connection = DriverManager.getConnection(url.toString());
+```
+
+### Statements
+JDBC позволяет создавать и выполнять запросы к БД
+- Update statements: CREATE, DELETE, INSERT ...
+- Query statements: SELECT
+
+Интерфейсы
+- Statement (Обычный запрос к БД. Может быть любого типа Update or Query). 
+- PreparedStatement (Возможность сделать некий шаблон запроса и подставляя в него конкретные значения исполнять его. Вначале приготовились, затем исполнили).
+- CallableStatement (Нужен для работы с хранимыми процедурами).
+
+Query statements - возвращают ResulSet
+Update statement - возвращают число измененных строк
+
+### ResultSet
+Содержит результат запроса.
+Перемещение по строкам:
+- next();
+- previous();
+- isLast();
+
+Доступ к полям текущей строки:
+- По имеи колонки: getBoolean(StringName), getLong(StringName) ...
+- По индексу колонки: getBoolean(int index), getLong(int index) ...
+
+### Close Connection
+Все обращения необходимо закрывать вручную или использовать AutoClosable
+- resultSet.close();
+- statement.close();
+- connection.close(); (Connection к БД мы должны закрывать при закрытии нашего приложения)
+
+### Lambda
+Функция в качестве переменной. "Библиотечный" код подготавливает данные для вызова метода и вызывает его. Какой именно метод будет вызван решает "пользователь" библиотеки.
+
+**Решение в Java 7**
+```java
+List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+// передать в метод анонимный класс
+Collection.sort(names, new Comparator<String>() {
+	@Override
+	public int compare(String a, String b) {
+		return a.compareTo(b);
+	}
+});
+```
+
+**Решение Java 8***
+```java
+List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+// анонимный класс не нужен
+Collections.sort(names, 
+		(String a, String b) -> {return a.compareTo(b);}
+);
+```
+
+Упрощение
+```java
+List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+// кавычки и типы тоже можно не писать
+Collections.sort(names,
+                (a, b) -> a.compareTo(b);
+);
+```
+
+### Executor
+Специальный паттерн для работы с БД.
+Для лучшего чтения кода и дальнейшего расширения необходимо отделить изменяемую часть кода от неизменяемой (неизменяемая часть - создание statement, стандартная работа с ним, исполнение statement и закрытие statement). Executor - это та самая общая часть для всех запросов.
+Объект, котрый содержит методы для работы с запросами.
+
+- Обработка запроса на создание, вставку, обновление и удаление. На выходе получаем поличество измененных строк. 
+```java
+execUpdate(Connection connection, String update);
+```
+
+- Обработка дапросов на получение данных. ResultHandler - объект класса содержащего функцию, которая поработает с resultSet-ом. Все это придумано для того, что бы не возвращать из execQuery resultSet. Если мы будем возвращать resultSet из execQuery - то мы не сможем в этом методе закрыть все подключения (точнее перекладываем закрытие всех подключений на того, кто использует метод) 
+```java
+execQuery(Connection connection, String query, ResultHandler handler);
+
+public interface ResultHandler {
+	void handle(ResultSet result) throws SQLException;
+}
+```
+
+### Update Statement
+```java
+public static int execUpdate(Connection connection, String update) {
+	Statement stmt = connection.createStatement();
+	stmt.execute(update);
+	int updated = stmt.getUpdateCount();
+	stmt.close();
+	return updated;
+}
+
+Примеры:
+```java
+execUpdate(connection, "create table users (id bigint auto_increment, name varchar(256), primary key (id))");
+execUpdate(connection, "insert into users (name) values ('tully')");
+```
+
+### Типизация
+```java
+public interface TResultHandler<T> {
+	T handle(ResultSet resultSet) throws SQLException;
+}
+
+public class TExecutor {
+	public <T> T execQuery(Connection connection, 
+				String query,
+				TResulthandler<T> handler) throws SQLException {
+		Statement stmt = connection.createStatement();
+		stmt.execute(query);
+		ResultSet result = stmt.getResultSet();
+		T value = handler.handle(result);
+		result.close();
+		stmt.close();
+		return value;
+	}
+}
+```
+**Пример запроса Java 7:**
+```java
+TExecutor execT = new TExecutor();
+String query = "select user_name from users where id=1";
+String name = execT.execQuery(
+	connection,
+	query,
+	new TResultHandler<String> () {
+		public String handle(ResultSet result) throws SQLException {
+			result.next();
+			return result.getString("user_name");
+		}
+	});
+
+System.out.append("User: " + name + "\n"); 
+```	
+
+**Пример запроса Java 8:**
+```java 
+Texecutor execT = new TExecutor();
+String query = "select user_name from users where id=1";
+String name = execT.execQuery(
+	connection,
+	query,
+	result -> {
+		result.next();
+		return result.getString("user_name");
+	}
+);
+
+System.out.append("User: " + name + "\n");
+```
+
+### Transactions
+**Транзакции** - это действия, которые могут быть выполнены либо целиком (атомарно), либо не выполнены совсем. Т.е. если мы какие-либо изменения должны выполнить транзакционно, то это означает, что мы все эти действия применяем, либо если мы отменяем эти действия, то отменяем их полностью. Транзакции должны быть поддержаны самой БД.
+ **Auto-commit** - это режим, когда после каждого нашего statement на изменение БД получает указание на сохранение этого изменения на диске (запись в БД).
+По-умолчанию auto-commit включен и выполняется после каждого statement-a.
+
+Некоторые методы для работы:
+- void setAutoCommit(boolean autoCommit) - вкл./выкл. auto-commit-а
+- void commit();
+- void rollback();
+
+**Пример (Statement):**
+public void execUpdate(Connection connection, String[] updates) {
+	try {
+		connection.setAutoCommit(false);
+		for (String update: updates) {
+			Statement stmt = conenction.createStatement();
+			stmt.execute(update);
+			stmt.close();
+		}
+		connection.commit();
+	} catch (SQLException e) {
+		try {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		} catch (SQLException ignore) {}
+	}
+}
+```
+
+**Пример (Prepared Statement):**
+```java
+public void exectUpdate(Connection connection, Map<Integer, String> idToName) {
+	try { 
+		String update = "insert into users(id, user_name) vaues (?, ?)";
+		PreparedStatemend stmt = connection.preparedStatemend(update);
+
+		for (Integer id: idToName.keySet()) {
+			stmt.setInt(1, id);
+			stmt.setString(2, idToName.get(id);
+			stmt.executeUpdate();
+		}
+
+		stmt.close();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+} 
+```
+
+### Аннотации
+Аннотации - методанные в коде. Это удобный способ "подписать" наш код (чем-то напоминают комментарии) и передать информацию о нашем коде тому, кому она может быть интересна.  
+- Содержат данные о программе не являясь частью программы
+- Не влияют непосредственно на работу приложения
+- Влияют только на ту функциональность, которая их обрабатывает 
+- Могут влиять на работу компилятора, инструментов и библиотек
+- "Decorating" or "Wrapping" кслассы в runtime
+
+**Примеры аннотаций**
+*Аннотация на класс*
+``java
+@Deprecated
+class OldClass{...}
+``
+
+*Аннотация на метод*
+``java
+@Test
+public void unitTestSomething() {...}
+``
+
+*Аннотация на поле*
+```java
+@Nullable
+private Object object;
+```
+
+*Аннотация на переменную*
+```java
+public int getUserById(@NotNull User user) {...}
+```
+
+### Пример аннотации @NotNull
+По задумке аннотация  @NotNull нужна для того, что бы показать разработчику, ОС, среде разработки и компилятору, что поле не является null.
+- Ссылка не может быть null.
+- Для программиста - указание на то, что на null можно не проверять.
+- Для среды разработки - подсветка присваиваний null.
+- В runtime - исключение в момент присваивания null.
+
+**Как работает @NotNull?**
+На стадии компиляции есть такая стадия, в которой мы запускаем **Annotation preprocessors**.
+
+**Annotation preprocessors :**
+- плагины для компилятора
+- разбирают аннотации
+- могут создать дополнительный код (в том числе новые классы)
+- можно написать свои плагины
+
+### Синтаксис Аннотаций
+Т.к. аннотации являются своеобразной надстройкой над интерфейсами, то в них не может быть полей. Поля заменили на методы (String author()), которые "работают" как поля. 
+- Не может наследовать или быть базовым классом
+- Не содержит конструкторов и полей
+- Может содержать методы без переменных, которые работают как поля
+
+```java
+@interface CreatedBy {
+	String author();
+	String date();
+}
+
+@CreatedBy (author = "tully", date = "01.01.2016")
+piblic class MyClass {...}
+
+@CreatedBy (author = "tully", date = "01.01.2016")
+public static void main(String[] args) {...}
+```
+
+### Обработка Аннотаций
+Обработка аннотаций в runtime.
+```java
+Class myClass = MyClass.class;
+Method method = myClass.getMethod("main");
+
+CreatedBy annotationC = (CreatedBy) myClass.getAnnotation(CreatedBy.class);
+CreatedBy annotationM = (CreatedBy) myClass.getAnnotation(CreatedBy.class);
+
+log.info("Author of the class: " + annotationC.author());
+log.info("Date of Writing the class: " + annotationC.date());
+log.info("Author of the method: " + annotationM.author());
+log.info("Date of Writing the method: " + annotationM.date()); 
+```
+
+### Виды аннотаций
+- **RetentionPolicy.SOURCE** - аннотации присутствуют только в коде (в byte-коде ее не будет)
+	* Информация для компилятора 
+	* Информация для инструментов IDE
+
+- **RetentionPolicy.CLASS** - сохранены в .class, но не доступны в runtime (работает по умолчанию)
+	* Доступны при анализе byte-кода
+	* Не доступны через reflection
+
+- **RetentionPolicy.RUNTIME** - сохранены в .class и доступны в runtime
+	* Аннотации можно получать из getClass() через reflection
+
+### Аннотации аннотаций
+@Retention - аннотация для указания типа аннотации
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@interface CreatedBy {
+	String author();
+	String date();
+}
+```
+
+### ORM. Object-Relational Mapping
+Связь между объектной моделью программы и реляционной моделью базы. 
+
+Пример:
+- Методы DAO принимают объекты и сохраняют их в БД
+- Методы DAO возвращают объекты собирая из на основе запросов
+
+**DAO** - Data Access Object - объект доступа к данным. DAO - это центральный элемент ORM, задача которого состоит в том, что бы взять объекты и "превратить" их в запрос к БД либо предоставить разработчику функции при вызове которой внутри себя DAO создаст запрос к БД, а разработчику отдаст объекты. 
+**DataSet** - Data Set - набор данных.
+
+### Java Persistence API 
+Package javax.persistence
+
+#### Аннотации
+- @Entity - объект класса можно переложить в таблицу
+- @Table - связывает класс и таблицу
+- @Id - поле является первичным ключом в таблице
+- @Column - связывает поле и колонку в таблице
+
+#### Аннотации для DataSet-ов
+```java
+import javax.persistence.*;
+
+@Entity
+@Table(name="users")
+public class UserDataSet {
+	@Id
+	@Column(name="id");
+	@GeneratedValue(strategy=GenerationType.IDENTITY);
+	private long id;
+
+	@Column(name="name")
+	private String name;
+
+	....
+}
+```
+
+### DataSet
+**DataSet** - объект, содержащий данные одной строки таблицы. При запросе мы получаем целиком всю строку таблицы, со всеми полями (получание данных в виде DataSet-а). В отличае от простого SQL запроса, где мы можем ограничиться несколькими столбцами (Получение данных в виде ResultSet-а). 
+- На каждую таблицу свой DataSet.
+- Извлечение и вставку удобно проводить через DataSet-ы.
+- В терминах JPA DataSet - это Entity.
+
+### DAO
+**Data Access Object***
+- Объект доступа к данным 
+- Шаблон проектирования скрывающий детали работы с БД
+- Обычно один DAO на одну таблицу
+- Высокоуровневый доступ к данным через DataSet-ы
+
+*Варианты операций над БД:*
+- Вставка строки - добавление DataSet
+- Поиск строки по ключу - возврат DataSet-a
+- Поиск строк по признаку - возврат List<DataSet>
+- Удаление строки
+
+Пример DAO:
+```java
+public interface UsersDAO {
+	UsersDataSet get(long id) throws SQLException;
+	UsersDataSet getByName(String name) throws SQLException;
+	void add(UsersDataSet dataSet) thwrows SQLException;
+	void delete(UsersDataSet dataSet) throws SQLException;
+}
+```
+
+### Hibernate
+Hibernate - ORM библиотека для Java.
+
+Добавление зависимости в файл POM:
+```xml
+<dependency>
+	<groupId>org.Hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+	<version>4.3.8.Final</version>
+</dependency>
+```
+
+#### Configuration Hibernate
+
+```java
+Configuration configuration = new org.hibernate.cfg.Configuration();
+configuration.setProperty(propertyName, propertyValue);
+``
+
+|PropertyName                      | PropertyValue                          |
+|----------------------------------|----------------------------------------|
+|hibernate.dialect                 | org.hibernate.dialect.MySQLDialect     |
+|hibernate.connection.driver_class | com.mysql.jdbc.Driver                  |
+|hibernate.connection.url          | jdbc.:mysql://localhost:3306/db_example|
+|hibernate.connection.username     | tully                                  |
+|hibernate.connection.password     | tully                                  |
+|hibernate.show_sql                | true                                   |
+|hibernate.hbm2ddl.auto            | update                                 |
+
+**Пояснения некоторых параметров:*
+dialect - подсказка hibernate как именно формировать sql запросы.
+show_sql - показывает в логах записи о том какие именно запросы сделал к БД hibernate. При разработке удобно использовать, следовательно ставим в true, в продакшене - false.
+
+#### hibernate.hbm2ddl.auto
+Автоматически создает или проверяет схему БД при создании SessionFactory.
+У hibernate есть некий набор реакций на разные ситуации соответствия или не соответствия DataSet-ов, которые мы ему дали и таблиц, которые он нашел в БД.
+
+- validate - проверяет схему не внося изменений
+- update - обновляет схему если находит различия
+- create - пересоздает схему
+- create-drop - уничтожает схему при закрытии SessionFactory
+
+### Session Factory
+Фабрика, которая создает сессии. 
+Сессия - это юнит, который позволяет нам делать запросы к БД.
+Т.к. создание фабрики - это тяжелый процесс, то мы должны создавать одну фабрику на поток нашего приложения. 
+
+- Одна фабрика на поток
+- Одна сессия на запрос
+
+#### Инициализация SessionFactory 
+```java
+StandartServiceRegistryBuilder builder = new StandartServiceRegistryBuilder();
+builder.applySettings(configuration.getProperties());
+ServiceRegistry serviceRegistry = builder.buildServiceRegistry();
+
+SessionFacory sessionFactory = configuration.buildSessionFactory(sevriceRegistry);
+
+Session session = sessionFactory.openSession();
+Transaction transaction = session.beginTrancaction();
+
+System.out.append(transaction.getKicalStatus().toString());
+
+// ...
+// код запросов к БД
+// ...
+
+session.close();
+sessionFactory.close();
+```
+
+Для того, что бы передать аннотированный класс (клачссы) в Hibernate, необходимо перед созданием фабрики в конфигурацию передать все классы всех DataSet-ов которые мы хотим использовать:
+```java
+configuration.addAnnotatedClass(UserDataSet.class);
+``` 
+После этого уже создаем фабрику и можно обращаться к БД.
+
+### Session
+На каждый запрос к БД мы создаем по сессии.
+- Основной интерфейс между приложением и библиотекой
+- Время жизни сессии соответствует времени жизни транзакции 
+- Задача сессии - работа с объектами проаннотированными как @Entity
+
+Пример:
+```java
+public void save(UserDataSet dataSet) {
+	Session session = sessionFactory.openSession();
+	Transaction trx = session.beginTransaction();
+	session.save(dataSet);
+	trx.commit();
+	session.close();
+}
+
+public UserDataSet read(long id) {
+	Session session = sessionFactory.openSession();
+	return (UserDataSet) session.load(UserDataSet.class, id);
+}
+```
+
+#### Hibernate Query Language
+HQL - язык запросов с помощью которого мы формируем задачу для hibernat-а. Если SQL - это язык, с помощью которого мы формируем запросы строкой, то в HQL мы запросы формируем объектами (формируем зарос вызовами методов разных объектов). 
+
+Tutorial по HQL - [hibernate query language](http://www.tutorialspoint.com/hibernate/hibernate_query_language.htm)
+
+При запросе к БД на чистом SQL, hibernate не использует:
+- диалекты
+- кеширование
+- так же могут произойти "странные" эффекты
+
+#### Hibernate Criteria API
+Tutorial по Hibernate Criteria API - [hibernate criteria API](http://www.tutorialspoint.com/hibernate/hibernate_criteria_queries.htm)
+
+Примеры запросов:
+*Поиск по ключу*
+```java
+public UserDataSet readByName(String name) {
+	Session session = sessionFactory.openSession();
+	Criteria criteria = session.createCriteria(UserDataSet.class);
+	return (UserDataSet) criteria
+		.add(Restrictions.eq("name", name)) // здесь "name" - не имя колонки в БД, а название поля, в котором лежит name внутри UserDataSet-а.
+		.uniqueResult();
+}
+```
+
+*Получение всех записей*
+```java
+public List<UserDataSet> readAll() {
+	Session session = sessionFactory.openSession();
+	Criteria criteria = session.createCriteria(UsrDataSet.class);
+	return (List<UserDataSet>) criteria.list();
+}
+
+```
