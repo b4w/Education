@@ -202,8 +202,8 @@
       <filters>
         <basic-filter>
           <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
-          <filter-element type="RESERVED_WORD" id="function" selected="false" />
-          <filter-element type="RESERVED_WORD" id="parameter" selected="false" />
+          <filter-element type="RESERVED_WORD" id="function" selected="true" />
+          <filter-element type="RESERVED_WORD" id="parameter" selected="true" />
           <filter-element type="RESERVED_WORD" id="datatype" selected="true" />
           <filter-element type="RESERVED_WORD" id="exception" selected="true" />
           <filter-element type="OBJECT" id="schema" selected="true" />
