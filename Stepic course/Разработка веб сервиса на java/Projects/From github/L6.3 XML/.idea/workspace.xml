@@ -2,37 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8373765-a6cd-41f4-bdcf-3c250b459dc8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L4.1 WebSockets/tester.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/tester.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L4.1 WebSockets/assembly.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L4.1 WebSockets/cfg/test.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L4.1 WebSockets/start.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L4.1 WebSockets/start_server.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/assembly.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/cfg/test.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/data/test_resource.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/parser/ReadXMLFileSAX.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/parser/SaxHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/reflection/ReflectionHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/reflection/Types.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/resources/IResourceServer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/resources/ResourceServerController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/resources/ResourceServerControllerMBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/resources/TestResource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/servlets/AdminPageServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/src/servlets/ResourcePageServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/start.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/start.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../L5.1 Tests/start_server.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../tests_and_loaders/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../tests_and_loaders/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../tests_and_loaders/src/main/java/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../tests_and_loaders/src/main/java/Math.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../tests_and_loaders/src/main/resources/Tests/SimpleTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/src/tester.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/src/cfg/test.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/src/main/java/Chat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/src/main/java/ChatServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/src/main/java/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/src/start.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ThreadsServiceMessage/src/task.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../../Books:Notes/Notes" afterPath="$PROJECT_DIR$/../../../../../Books:Notes/Notes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../L3.2 ORM/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/../L3.2 ORM/.idea/dbnavigator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../L3.2 ORM/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../L3.2 ORM/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../L5.1 Tests/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../L5.1 Tests/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="L6.3.iws" />
     <ignored path=".idea/workspace.xml" />
