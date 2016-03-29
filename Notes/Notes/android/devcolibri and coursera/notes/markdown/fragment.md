@@ -9,17 +9,22 @@
 LayoutInflater - специальный менеджер компоновки, который позволяет получать доступ к нашим layout-ам с наших ресурсов.
 Bundle savedInstanceState - сможем ли мы в будущем использовать данный фрагмент для подключения в activity через контейнер.
 Пример:
+'''java
 @Override
 public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     return inflater.inflate(R.layout.button_layout, container, false);
 }
+'''
+
 В layout xml fragment вставляется с помощью тега - <fragment/>
 Пример:
+'''xml
 <fragment android:name="com.mysuperfragment.app.ButtonFragment"
               android:id="@+id/button_fragment"
               android:layout_height="wrap_content"
               android:layout_width="match_parent"
               tools:layout="@layout/button_layout"/>
+'''
 
 # Цикл жизни fragment-a. Ex 23
 Жизненный цикл fragment-a:
