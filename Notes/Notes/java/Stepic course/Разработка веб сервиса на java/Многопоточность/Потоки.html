@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>Потоки</title></head><body><article class="markdown-body"><h4>
+<a id="user-content-processes-and-threads" class="anchor" href="#processes-and-threads" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Processes and Threads</h4>
+
+<p><em>Процессы</em></p>
+
+<ul>
+<li>Приложение со своим набором run-time ресурсов и собственной памятью. </li>
+<li>Взаимодействие через Inter Process Communication ресурсы.</li>
+<li>Можно запускать на нескольких компьютерах.</li>
+</ul>
+
+<p><em>Потоки</em></p>
+
+<ul>
+<li>"Живут" в одном процессе </li>
+<li>Используют общую память "Heap" и другие ресурсы приложения</li>
+<li>Старт приложения - создание main потока</li>
+<li>Потоки могут пораждать другие потоки и взаимодействовать с ними</li>
+</ul>
+
+<h4>
+<a id="user-content-Поток" class="anchor" href="#%D0%9F%D0%BE%D1%82%D0%BE%D0%BA" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Поток</h4>
+
+<ul>
+<li>Объект, у класса которого есть методы start() и run(). </li>
+<li>После вызова метода start() будет выполнен run(). </li>
+<li>Метод run() будет выполнен в своем стеке.</li>
+</ul>
+
+<p>Вызывая метод start(), мы просим операционную систему создать условия
+ для приложения при которых начнется исполнения последовательности 
+команд метода run(), причем это выполнение пойдет в паралель с 
+выполнением каких-то других методов run() других потоков. </p>
+
+<p><em>Threads</em></p>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/threads.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/threads.jpg" alt="threads" style="max-width:100%;"></a></p>
+
+<p><em>Порядок не определен</em></p>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/threads_prior.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/threads_prior.jpg" alt="threads" style="max-width:100%;"></a></p>
+
+<p>Мы создавая потоки не получаем от операционной системы гарантии последовательности исполнения методов run()</p>
+
+<h4>
+<a id="user-content-Роль-операционной-системы" class="anchor" href="#%D0%A0%D0%BE%D0%BB%D1%8C-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Роль операционной системы</h4>
+
+<p><em>Операционная система</em></p>
+
+<ul>
+<li>Создает потоки </li>
+<li>Переключает потоки (context switch)</li>
+<li>API для уведомления потока </li>
+</ul>
+
+<h4>
+<a id="user-content-interface-runnable" class="anchor" href="#interface-runnable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interface Runnable</h4>
+
+<p>Поток - это объект, реализующий интерфейс Runnable. Всего один метод - run();</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">HelloRunnable</span> <span class="pl-k">implements</span> <span class="pl-e">Runnable</span> {
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">run</span>() {
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Hello from a thread!<span class="pl-pds">"</span></span>);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) {
+        (<span class="pl-k">new</span> <span class="pl-smi">Thread</span>(<span class="pl-k">new</span> <span class="pl-smi">HelloRunnable</span>()))<span class="pl-k">.</span>start();
+    }
+}</pre></div>
+
+<h4>
+<a id="user-content-class-thread" class="anchor" href="#class-thread" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>class Thread</h4>
+
+<p>class Thread - реализует интерфейс Runnable. Thread содержит метод start() - запуск нового потока.</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">HelloThread</span> extends <span class="pl-smi">Thread</span> {
+    <span class="pl-k">public</span> <span class="pl-k">void</span> run() {
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>Hello from a thread!<span class="pl-pds">"</span></span>);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> main(<span class="pl-k">String</span>[] args) {
+        (<span class="pl-k">new</span> <span class="pl-smi">HelloThread</span>())<span class="pl-k">.</span>start();
+    }
+}</pre></div>
+
+<h4>
+<a id="user-content-runnable-vs-thread" class="anchor" href="#runnable-vs-thread" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Runnable vs Thread</h4>
+
+<p>Runable</p>
+
+<ul>
+<li>Можно наследовать класс отличный от Thread</li>
+<li>Runnable класс нужно передавать в конструктор Thread объекта </li>
+</ul>
+
+<p>Thread</p>
+
+<ul>
+<li>Содержит методы управления потоком </li>
+<li>Текущий Thread можно получить в любом месте кода - Thread thread = Thread.currentThread();</li>
+</ul>
+
+<h4>
+<a id="user-content-Доступ-к-объекту-потока" class="anchor" href="#%D0%94%D0%BE%D1%81%D1%82%D1%83%D0%BF-%D0%BA-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%83-%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Доступ к объекту потока</h4>
+
+<p>Некоторые методы:</p>
+
+<ul>
+<li>long getId(); // идентификатор потока</li>
+<li>String getName(); // имя потока </li>
+<li>int getPriority(); // приоритет потока, по которому ОС решает как много ресурсов этому потоку давать (время исполнения)</li>
+<li>void setPriority(int priority); // задание приоритета потока </li>
+<li>static void sleep(long ms); // останавливаем исполнение потока на 
+определенное время (ms). Но при этом нет гарантии, что поток проснется 
+через определенное время ms. Т.е. поток не проснется раньше, но 
+насколько позже - решит ОС.</li>
+<li>void interrupt(); // возможность разбудить поток. Реакция на 
+interrupt() сильно зависит от того, в каком состоянии этот поток 
+находится. Если поток спит, то interrupt() приведет к 
+InterruptedException (поток будет разбужен через вызов исключения). Если
+ поток не спит, то выброса исключения не произойдет, а будет только 
+выстовленно в thrue переменная interrupted (boolean interrupted = thrue)
+ (пример с перекачиванием файлов через браузер в отдельном потоке);<br>
+</li>
+<li>staic boolean interrupted();</li>
+<li>void join(); // если надо остановить текущий поток до окончания другого потока</li>
+</ul>
+
+<h4>
+<a id="user-content-sleep-and-interrupt" class="anchor" href="#sleep-and-interrupt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sleep and interrupt</h4>
+
+<p>Если нужно остановить выполнение потока 
+<code>Thread.sleep(1000);</code> - остановит выполнение потока на 1 секунду.</p>
+
+<p>Если нужно прервать выполнение потока 
+<code>thread.interrupt();</code> - пошлет прерывание потоку thread</p>
+
+<p>Пример:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">try</span> {
+    <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">5000</span>);
+} <span class="pl-k">catch</span> (<span class="pl-smi">InterruptedException</span> e) {
+    <span class="pl-k">return</span>; <span class="pl-c">// We've been interrupted</span>
+}
+
+<span class="pl-k">for</span> (<span class="pl-k">int</span> i<span class="pl-k">=</span><span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> input<span class="pl-k">.</span>length; i<span class="pl-k">++</span>) {
+    heavyTask(inputs[i]);
+    <span class="pl-k">if</span> (<span class="pl-smi">Thread</span><span class="pl-k">.</span>interrupted()) {
+        <span class="pl-k">return</span>;
+    }
+}   </pre></div>
+
+<h4>
+<a id="user-content-join" class="anchor" href="#join" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Join</h4>
+
+<p>Если надо остановить текущий поток до окончания другого потока</p>
+
+<ul>
+<li>В текущем потоке вызываем thread.join();</li>
+<li>Текущий поток ждет пока завершится поток thread</li>
+</ul>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">HelloThread</span> <span class="pl-k">extends</span> <span class="pl-e">Thread</span> {
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">run</span>() {
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>1. Hello from a thread!<span class="pl-pds">"</span></span>);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) {
+        <span class="pl-smi">Thread</span> thread <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">HelloThread</span>();
+        thread<span class="pl-k">.</span>start();
+        thread<span class="pl-k">.</span>join();
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>2. Hello from main!<span class="pl-pds">"</span></span>);
+    }
+}</pre></div>
+
+<h4>
+<a id="user-content-Термины" class="anchor" href="#%D0%A2%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Термины</h4>
+
+<p>Наиболее распростронненные понятия многопоточности:</p>
+
+<ul>
+<li>Mutex</li>
+<li>Critical section </li>
+<li>Monitor</li>
+<li>Semaphore</li>
+<li>Lock</li>
+</ul>
+
+<p><strong>Critical section</strong></p>
+
+<p>Участок исполняемого кода программы, в котором производится доступ к 
+общему ресурсу (данным или устрйству), который не должен быть 
+одновремено использован более чем одним потоком исполнения. Например 
+чтение из файла - не будет кретической секцией, а запись в файл - будет.
+ </p>
+
+<p><strong>Semaphore</strong></p>
+
+<p>Объект, ограничивающий количество потоков, которые могут войти в заданный участок кода.</p>
+
+<p>init(n); // счетчик = n;
+enter(); // ждать пока счетчик станет больше 0, после этого уменьшить счетчик на еденицу
+leave(); // увеличить счетчик на еденицу</p>
+
+<p>Например изначально счетчик = 5, при каждом вызове enter(); уменьшаем
+ значение на 1. При достижении 0, мы не можем вызвать метод enter(); 
+Метод leave(); работает в противоположную сторону, увеличивает значение 
+на 1.</p>
+
+<p><strong>Mutex</strong></p>
+
+<p>Mutual exclusion - простейшие двоичные семафоры, которые могут 
+находиться в одном из двух состояний - отмеченном или неотмеченном. 
+Mutex - основа организации кретических секций. </p>
+
+<p><strong>Lock</strong></p>
+
+<p>Блокировка. Это механизм синхронизации, позволяющий обеспечить 
+исключительный доступ к разделяемому ресурсу между несколькими потоками 
+(механизм использования mutex-a). Пример: мы используя mutex и подходя к
+ некоторому участку кода проверяем можем в него зайти или нет.</p>
+
+<p><strong>Мягкая блокировка</strong> - каждый поток пытается получить блокировку перед доступом к соответствующему разделяемому ресурсу. </p>
+
+<p><strong>Обязательная блокировка</strong> - попытка несанкционированного доступа к заблокированному ресурсу будет прервана, через создание исключения.
+Аппаратная поддержка: copmare-and-swap  </p>
+
+<p><strong>Monitor</strong>
+Механизм взаимодействия и синхронизации процессов. Высокоуровневая 
+конструкция, которая состоит из mutex-a и массива ожидающих очереди 
+потоков. У монитора должен быть механизм остановки потока и сигнализации
+ о доступности прдолжения работы. </p>
+
+<p>Монитор - это объект, который следит за тем что бы всего один поток 
+из массива мог зайти в кретическую секцию, а все остальные стояли и 
+ждали того момента, когда первый поток выйдет и блокировка будет снята. 
+Затем можно будет из очереди взять следующий поток, уведомить его что он
+ может зайти в кретическую секцию и после этого данный поток сможет 
+выполнить необходимый участок кода.</p>
+
+<p>Hepl из habrahabr: <a href="https://habrahabr.ru/post/277669/">статья про многопоточность</a></p>
+
+<h4>
+<a id="user-content-executor-Паттерн" class="anchor" href="#executor-%D0%9F%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Executor (Паттерн)</h4>
+
+<p>Объект, который выполняет Runnable. Разделяет создание Runnable и способ запуска run();</p>
+
+<p>Два возможных способа запуска executor-ом:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// хорошо подходит для тестов</span>
+<span class="pl-k">class</span> <span class="pl-en">DirectExecutor</span> <span class="pl-k">implements</span> <span class="pl-e">Executor</span> {
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">execute</span>(<span class="pl-smi">Runnable</span> <span class="pl-v">r</span>) {
+        r<span class="pl-k">.</span>run();
+    }
+}
+
+<span class="pl-k">class</span> <span class="pl-en">ThreadPerTaskExecutor</span> <span class="pl-k">implements</span> <span class="pl-e">Executor</span> {
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">execute</span>(<span class="pl-smi">Runnable</span> <span class="pl-v">r</span>) {
+        <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(r)<span class="pl-k">.</span>start();
+    }
+}</pre></div>
+
+<p>Executor - применение шаблона, разделяющего создание в коде сущности и
+ ее использования. Мы отдельно наследуюемся от Runnable, создаем 
+наследника runnable, в котором мы хотим произвести некие действия. 
+Executor необходим нам для того, что бы запустить на исполнение то, что 
+мы написали в Runnable. Как именно executor будет вызывать runnable, 
+создатель этого runnable не обязан знать. 
+С помощью данного паттерна мы развели задачу создания runnable и то 
+каким образом эту задачу исполнить. </p>
+
+<h4>
+<a id="user-content-callable" class="anchor" href="#callable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Callable</h4>
+
+<p>Callable - это Runnable, возвращающее результат. Необходим для тогда,
+ когда нужно не просто запустить выполнение в потоке, а получить 
+результат. </p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">TackExtendedRunnable</span> tack <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">TackExtendedRunnable</span>(); <span class="pl-c">// сласс, который implement Runnable</span>
+<span class="pl-smi">Thread</span> t <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Thread</span>(tack);
+t<span class="pl-k">.</span>start();
+t<span class="pl-k">.</span>join(); <span class="pl-c">// в данном потоке подцепились к тому потоку, который создали и ждем результата.</span>
+<span class="pl-smi">String</span> value <span class="pl-k">=</span> task<span class="pl-k">.</span>getSavedValue(); <span class="pl-c">// после того как поток t отработал, можем взять результат </span></pre></div>
+
+<h4>
+<a id="user-content-executorservice" class="anchor" href="#executorservice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExecutorService</h4>
+
+<p>ExecutorService - это пулл потоков (который встроен в библиотеку java). Объект, предоставляющий потоки. </p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ExecutorService</span> pool <span class="pl-k">=</span> <span class="pl-smi">Executors</span><span class="pl-k">.</span>newFixedThreadPool(<span class="pl-c1">1</span>); <span class="pl-c">// создаем pool с 1 потоком </span>
+<span class="pl-k">Callable&lt;<span class="pl-smi">Integer</span>&gt;</span> callable <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">TaskImplementsCallable</span>(); <span class="pl-c">// создаем callable (класс, который implements Collable)</span>
+<span class="pl-k">Future&lt;<span class="pl-smi">Integer</span>&gt;</span> future <span class="pl-k">=</span> pool<span class="pl-k">.</span>submit(callable); <span class="pl-c">// создаем объект future</span>
+future<span class="pl-k">.</span>get(); </pre></div>
+
+<h4>
+<a id="user-content-future" class="anchor" href="#future" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future</h4>
+
+<p>Future - объект, обертка над value, которое будет получено в будущем.
+ 
+Например: мы получили future. В тот момент, когда мы его получили оно не
+ обязательно содержит в себе какое-то значение, но по контракту значение
+ в будущем должно там появиться (результат выполнения задачи в некоторм 
+другом потоке).</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">Future&lt;<span class="pl-smi">Integer</span>&gt;</span> future <span class="pl-k">=</span> pool<span class="pl-k">.</span>submit(callable);
+future<span class="pl-k">.</span>get(); <span class="pl-c">// блокировка до получения результата</span></pre></div>
+
+<p>Future может пригодиться например для такой задачи: Мы можем создать 
+pool большого размера, задач сделать гораздо больше, все их submit. 
+Затем в цикле извлекать значения из future.</p>
+
+<h4>
+<a id="user-content-Взаимодействие-потоков" class="anchor" href="#%D0%92%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D0%B5-%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%B2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Взаимодействие потоков</h4>
+
+<p>Как осуществить взаимодействие между потоками? Взаимодействие в 
+данном случае это изменение одного и того же объекта нескольними 
+потоками. </p>
+
+<ul>
+<li>У потоков общий heap</li>
+<li>Можно передать в два потока ссылку на один объект</li>
+<li>Потоки смогут менять общий объект и взаимодействовать через него</li>
+</ul>
+
+<h4>
+<a id="user-content-synchronization" class="anchor" href="#synchronization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Synchronization</h4>
+
+<p>Сама память не предоставляет защитных механизмов, которые позволили 
+бы безопасно осуществить процесс передачи информации от одного потока к 
+другому, поэтому такой механизм приходится придумывать самим на уровне 
+языков. </p>
+
+<p><em>Возможные ошибки одновременного доступа</em></p>
+
+<ul>
+<li>Thread interference - потеря результата из-за не атомарности операции (пример с инкрементом значения из 2-х потоков)</li>
+<li>Memory consistency errors - ошибочное состояние общей памяти (пример
+ с массивом, когда один поток добавляет запись, а второй при этом читает
+ данные из массива) </li>
+</ul>
+
+<h4>
+<a id="user-content-java-memory-model" class="anchor" href="#java-memory-model" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Java memory model</h4>
+
+<p>Описывает то, как потоки должны безопасно взаимодействовать через 
+общую память. Так же это набор некоторых инструментов, которые позволяют
+ нам в своем приложении эту безопасную работу реализовать. </p>
+
+<p><em>Основные проблемы</em></p>
+
+<ul>
+<li>Кеширование значений в многопроцессорных средах</li>
+<li>Изменение порядка операций для оптимизации</li>
+</ul>
+
+<p><em>Инструменты для решения</em></p>
+
+<ul>
+<li>final - не изменять значение переменной</li>
+<li>volatile - не кешировать, всегда считывать из общей памяти. Здесь применяется принцип Happens-before.</li>
+<li>synchronized - отметить участок кода доступный только одному треду<br>
+</li>
+</ul>
+
+<p>Полезная ссылка: <a href="https://habrahabr.ru/post/133981/">jmm habrahabr</a></p>
+
+<h4>
+<a id="user-content-synchronization-1" class="anchor" href="#synchronization-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Synchronization</h4>
+
+<p><em>Synchronization methods</em></p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">synchronized</span> <span class="pl-k">void</span> increment() {
+    <span class="pl-k">++</span>i;
+}</pre></div>
+
+<p><em>Synchronized statements</em></p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">void</span> addName(<span class="pl-smi">String</span> name) {
+    <span class="pl-c">// участок кода. lockObject - некий объект, который будет работать монитором для synchronized</span>
+    <span class="pl-k">synchronized</span>(lockObject) {
+        lastName <span class="pl-k">=</span> name;
+        nameCount<span class="pl-k">++</span>;
+    }
+    nameList<span class="pl-k">.</span>add(name);
+}</pre></div>
+
+<h4>
+<a id="user-content-lock-object" class="anchor" href="#lock-object" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lock object</h4>
+
+<p>В примере, который приведен ниже, при создании объекта OneLock и 
+использовании его двумя потоками, мы одним из потоков можем зайти либо в
+ c1Up();, либо в c2Up(); Не может быть ситуации, когда мы двумя потоками
+ зашли в первый или во второй, либо первым - в c1Up();, вторым в - 
+c2Up(); 
+Если таким способом организован класс, то монитором будет сам объект 
+данного класса (сам объект будет следить, что только один из потоков 
+зашел и вызвал метод). <strong>Тем самым в java любой объект любого класса может быть монитором.</strong> </p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">OneLock</span> {
+    <span class="pl-k">private</span> <span class="pl-k">long</span> c1 <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+    <span class="pl-k">private</span> <span class="pl-k">long</span> c2 <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+
+    <span class="pl-k">public</span> <span class="pl-k">synchronized</span> <span class="pl-k">void</span> <span class="pl-en">c1Up</span>() {
+        c1<span class="pl-k">++</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">synchronized</span> <span class="pl-k">void</span> <span class="pl-en">c2Up</span>() {
+        c2<span class="pl-k">++</span>;
+    }
+}</pre></div>
+
+<p>Пример когда мы хотим, что бы разные переменные менялись разными потоками одновременно. 
+lock1 и lock2 - специальные объекты, которые работают как мониторы.</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TwoLock</span> {
+    <span class="pl-k">private</span> <span class="pl-k">long</span> c1 <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+    <span class="pl-k">private</span> <span class="pl-k">long</span> c2 <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+    <span class="pl-k">private</span> <span class="pl-smi">Object</span> lock1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>(); <span class="pl-c">// the first lock</span>
+    <span class="pl-k">private</span> <span class="pl-smi">Object</span> lock2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Object</span>(); <span class="pl-c">// the second lock</span>
+
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">c1Up</span>() {
+        <span class="pl-k">synchronized</span>(lock1) {
+            c1<span class="pl-k">++</span>;
+        }
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">c2Up</span>() {
+        <span class="pl-k">synchronized</span>(lock2) {
+            c2<span class="pl-k">++</span>;
+        }
+    }
+}</pre></div>
+
+<p><em>DeadLock</em></p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">void</span> c1c2Up() {
+    <span class="pl-k">synchronized</span>(lock1) {
+        c1<span class="pl-k">++</span>;
+        <span class="pl-k">synchronized</span>(lock2) {
+            c2<span class="pl-k">++</span>;
+        }
+    }
+}
+
+pubic <span class="pl-k">void</span> c2c1Up() {
+    <span class="pl-k">synchronized</span>(lock2) {
+        c2<span class="pl-k">++</span>;
+        <span class="pl-k">synchronized</span>(lock1) {
+            c1<span class="pl-k">++</span>;
+        }
+    }
+}</pre></div>
+
+<h4>
+<a id="user-content-wait-и-notify" class="anchor" href="#wait-%D0%B8-notify" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>wait() и notify();</h4>
+
+<ul>
+<li>wait(), notify() и notifyAll() - методы класса Object</li>
+<li>object.wait() - ждать в текущем потоке, пока не придет notify();</li>
+<li>object.notify() - сигнал "продолжить" первому, кто начал wait();</li>
+<li>object.notifyAll() - сигнал "продолжить" всем, кто начал wait();</li>
+</ul>
+
+<h4>
+<a id="user-content-Служба-в-отдельном-потоке" class="anchor" href="#%D0%A1%D0%BB%D1%83%D0%B6%D0%B1%D0%B0-%D0%B2-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC-%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Служба в отдельном потоке.</h4>
+
+<p>Вариан организации удобной работы со службой при работе с потоками. Служба в отдельном потоке работает постоянно. </p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">private</span> <span class="pl-k">boolean</span> needSomething;
+
+<span class="pl-k">public</span> <span class="pl-k">void</span> run() {
+    <span class="pl-k">while</span>(<span class="pl-c1">true</span>) {
+        <span class="pl-k">if</span>(needSomething) {
+            doSomething();
+        }
+        <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">1000</span>);
+    }
+}</pre></div>
+
+<h4>
+<a id="user-content-atomic" class="anchor" href="#atomic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Atomic</h4>
+
+<p>Один из самых простых реализаций потокобезопасных объектов, доступ к 
+данным которых может быть осуществлен потокобезопасно - это просто взять
+ и обозначить словом "synchronized" все методы этого класса, которе 
+могут менять данные. Тогда с данными сможет работать только один поток. 
+Но данный подход не всегда является эффективным. </p>
+
+<p>java.util.concurrent.atomic (Без использования synchronized)</p>
+
+<ul>
+<li>AtomicBoolean</li>
+<li>AtomicInteger</li>
+<li>AtomicLong 
+Потокобезопасность реализована без обращения к API операционной системы. </li>
+</ul>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">final</span> <span class="pl-k">int</span> incrementAndGet() {
+    <span class="pl-k">while</span>(<span class="pl-c1">true</span>) {
+        <span class="pl-k">int</span> current <span class="pl-k">=</span> get(); <span class="pl-c">// get(); - возвращает текущее значение (volatile)</span>
+        <span class="pl-k">int</span> next <span class="pl-k">=</span> current <span class="pl-k">+</span> <span class="pl-c1">1</span>;
+        <span class="pl-k">if</span> (compareAndSet(current, next)) {
+            <span class="pl-k">return</span> next;
+        }
+}
+
+<span class="pl-k">public</span> <span class="pl-k">final</span> <span class="pl-k">boolean</span> compareAndSet(<span class="pl-k">int</span> expect, <span class="pl-k">int</span> update) {
+    <span class="pl-c">// метод выполняется на процессоре ОС</span>
+    <span class="pl-k">return</span> unsafe<span class="pl-k">.</span>compareAndSwapInt(<span class="pl-v">this</span>, valueOffSet, expect, update);
+}</pre></div>
+
+<pre><code>         сравниваем за 1
+    атомарную операцию
+</code></pre>
+
+<hr>
+
+<p>| get(); |         =          | expect |   | update |</p>
+
+<hr>
+
+<p>Если значения get(); и expect совпадают, то мы меняем местами ячейку get(); и update
+Как только несколько потоков зашли в compareAndSwapInt, только один из них сможет сделать операцию сравнения.</p>
+
+<h4>
+<a id="user-content-synchronized-vs-concurrent" class="anchor" href="#synchronized-vs-concurrent" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Synchronized VS Concurrent</h4>
+
+<p>Concurrent - предназначена для работы с несколькими потоками, но не синхронная (без использования synchronized).</p>
+
+<p>Примеры:</p>
+
+<ul>
+<li>ConcurrentHashMap - concurrent</li>
+<li>HashTable - synchronized</li>
+</ul>
+
+<p>synchronized - гарантия, что только один поток работает с элементом
+concurrent - разрешено одновременное чтение и безопасная запись</p>
+
+<h4>
+<a id="user-content-concurrent-collections" class="anchor" href="#concurrent-collections" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concurrent Collections</h4>
+
+<p>Контейнеры, безопасные для многопоточного доступа</p>
+
+<ul>
+<li>CopyOnWriteArrayList - копирование при вставке ArrayList<br>
+</li>
+<li>CopyInWriteArraySet - Set интерфейс над CopyInWriteArrayList </li>
+<li>ConcurrentHashMap - thread safe HashMap</li>
+<li>ConcurrentSkipListMap - ключи уникальны и отсортированны</li>
+<li>ConcurrentSkipListSet - Set на базе ConcurrentSkipListMap</li>
+</ul>
+
+<p>CopyOnWriteArrayList, CopyOnWriteArraySet - данные решения хорошо 
+работают в случае если мы часто производим чтение и редко производим 
+вставку, потому что при каждой вставке у нас в контейнерах будет создана
+ дополнительная копия (копирование внутренних элементов при вставке). 
+При этом будет "жить" предыдущая копия. Таким образом решается проблема с
+ многопоточным доступом, т.е. если при чтении из одного потока мы 
+добавляем значение из другого, то одна копия "будет смотреть" на один 
+поток (чтение), вторая на другой (вставка).</p>
+
+<h4>
+<a id="user-content-concurrent-queues" class="anchor" href="#concurrent-queues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concurrent Queues</h4>
+
+<p>Очереди безопасны для многопоточного доступа.</p>
+
+<ul>
+<li>ConcurrentLinkedQueue - thread safe очередь. Можно удобно 
+реализовать обмен данными между потоками через систему обмена 
+сообщениями.</li>
+<li>BlockingQueue - очередь с ограничением размера. Если размер переполнен, то все желающие вставить значения - должны ждать.<br>
+
+<ul>
+<li>ArrayBlockingQueue</li>
+<li>LinkedBlockingQueue</li>
+</ul>
+</li>
+<li>BlockingDeaue - двухсторонняя "очередь"
+
+<ul>
+<li>ArrayBlockingDeaue<br>
+</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="user-content-Ахитектура-сервера" class="anchor" href="#%D0%90%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ахитектура сервера</h4>
+
+<p>Самый простой способ организации работы сервера, сделать все "в один поток".
+FrontEnd - та часть, которая работает с клиентом (сокеты, сервлеты и т.д.)
+Game Mechanics - вся логика работы нашего приложения, т.е. все взаимосвязи между объектами и их влияние друг на друга.
+Resource System - часть, работающая с файлами 
+Database - все, что связанно с persistence</p>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/server_arch.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/server_arch.jpg" alt="однопоточный сервер" style="max-width:100%;"></a></p>
+
+<p><em>Аналогия</em></p>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/server_analog.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/server_analog.jpg" alt="аналогия" style="max-width:100%;"></a></p>
+
+<h4>
+<a id="user-content-Улучшение-1" class="anchor" href="#%D0%A3%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Улучшение #1</h4>
+
+<p>Самый очевидный вариант - на каждое соединение создаем по потоку. 
+Минусы:</p>
+
+<ul>
+<li>"Дорого" создавать новый поток.</li>
+<li>Потоков на всех не хватит</li>
+</ul>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/server_var1.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/server_var1.jpg" alt="вариант 1" style="max-width:100%;"></a></p>
+
+<p>Аналогия #1
+<a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/server_analog1.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/server_analog1.jpg" alt="аналогия 1" style="max-width:100%;"></a></p>
+
+<h4>
+<a id="user-content-Улучшение-2" class="anchor" href="#%D0%A3%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Улучшение #2</h4>
+
+<p>Использование пулла потоков. Таким образом работает сервер Jetty.
+Минусы:</p>
+
+<ul>
+<li>Потоков на всех не хванит</li>
+<li>При полностью занятом пулле - клиент отбрасывается</li>
+</ul>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/server_var2.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/server_var2.jpg" alt="вариант 2" style="max-width:100%;"></a></p>
+
+<p>Аналогия #2
+<a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/server_analog2.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/server_analog2.jpg" alt="аналогия 2" style="max-width:100%;"></a></p>
+
+<h4>
+<a id="user-content-Улучшение-3" class="anchor" href="#%D0%A3%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Улучшение #3</h4>
+
+<p>Использовать очередь обработки запросов. Каждый сервис (FronEnd, 
+GameMechanics, DataSase и т.д.) - являются потоком. Для каждого сервиса 
+есть очередь запросов к нему. </p>
+
+<h4>
+<a id="user-content-message-system" class="anchor" href="#message-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Message system</h4>
+
+<p><em>Основная идея</em>
+(Должно быть по одной коллекции на каждый поток) </p>
+
+<ul>
+<li>Один поток кладет сообщение в коллекцию (содать объект типа message и добавить его в коллекцию)</li>
+<li>Второй поток достает сообщение и исполняет его </li>
+</ul>
+
+<p><em>Thread-safe коллекции</em>
+(Необходимо что бы разные потоки обращаясь к коллекции, не поломали ее)</p>
+
+<ul>
+<li>Безопасная работа с элементами коллекции</li>
+<li>Оптимальная работа</li>
+</ul>
+
+<p><em>Thread-local объекты</em></p>
+
+<ul>
+<li>Объекты, на которые есть ссылки только из одного потока. </li>
+</ul>
+
+<p><em>Аналогия с системой сообщений</em>
+<a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/server_final.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/server_final.jpg" alt="" style="max-width:100%;"></a></p>
+
+<h4>
+<a id="user-content-address-и-abonent" class="anchor" href="#address-%D0%B8-abonent" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Address и Abonent</h4>
+
+<p>Address - класс, объект которого мы будем создавать для каждого нашего сервиса.</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Address</span> {
+    <span class="pl-k">static</span> <span class="pl-k">private</span> <span class="pl-smi">AtomicInteger</span> abonentIdCreator <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AtomicInteger</span>();
+    <span class="pl-k">final</span> <span class="pl-k">private</span> <span class="pl-k">int</span> abonentId;
+
+    <span class="pl-k">public</span> <span class="pl-en">Address</span>() {
+        <span class="pl-v">this</span><span class="pl-k">.</span>abonentId <span class="pl-k">=</span> abonentCreator<span class="pl-k">.</span>incrementAndGet();
+    }
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">int</span> <span class="pl-en">hashCode</span>() {
+        <span class="pl-k">return</span> abonentId;
+    }
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">boolean</span> <span class="pl-en">equals</span>(<span class="pl-k">int</span> <span class="pl-v">abonent</span>) {
+        <span class="pl-k">return</span> <span class="pl-v">this</span><span class="pl-k">.</span>abonent <span class="pl-k">==</span> abonent;
+    }
+}   
+
+<span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">Abonent</span> {
+    <span class="pl-smi">Address</span> getAddress;
+}   </pre></div>
+
+<h4>
+<a id="user-content-message" class="anchor" href="#message" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Message</h4>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">abstract</span> <span class="pl-k">class</span> <span class="pl-en">Msg</span> {
+    <span class="pl-k">private</span> <span class="pl-k">final</span> <span class="pl-smi">Address</span> from;
+    <span class="pl-k">private</span> <span class="pl-k">final</span> <span class="pl-smi">Address</span> to;
+
+    <span class="pl-k">public</span> <span class="pl-en">Msg</span>(<span class="pl-smi">Address</span> <span class="pl-v">from</span>, <span class="pl-smi">Address</span> <span class="pl-v">to</span>) {
+        <span class="pl-v">this</span><span class="pl-k">.</span>from <span class="pl-k">=</span> from;
+        <span class="pl-v">this</span><span class="pl-k">.</span>to <span class="pl-k">=</span> to;
+    } 
+
+    <span class="pl-k">protected</span> <span class="pl-smi">Address</span> <span class="pl-en">getFrom</span>() {
+        <span class="pl-k">return</span> from;
+    }
+
+    <span class="pl-k">protected</span> <span class="pl-smi">Address</span> <span class="pl-en">getTo</span>(){
+        <span class="pl-k">return</span> to;
+    }
+
+    <span class="pl-c">// exec - список инструкций, которые необходимо выполнить + храним ссылку на того, кому сообщение будет отправленно </span>
+    <span class="pl-k">public</span> <span class="pl-k">abstract</span> <span class="pl-k">void</span> <span class="pl-en">exec</span>(<span class="pl-smi">Abonent</span> <span class="pl-v">abonent</span>);
+}</pre></div>
+
+<h4>
+<a id="user-content-message-to-dbservice" class="anchor" href="#message-to-dbservice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Message to DBService</h4>
+
+<p>Абстрактный класс сужающий поле действия Message.</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">abstract</span> <span class="pl-k">class</span> <span class="pl-en">MsgToDB</span> <span class="pl-k">extends</span> <span class="pl-e">Msg</span> {
+    <span class="pl-k">public</span> <span class="pl-en">MsgToDB</span>(<span class="pl-smi">Address</span> <span class="pl-v">from</span>, <span class="pl-smi">Address</span> <span class="pl-v">to</span>) {
+        <span class="pl-v">super</span>(from, to);
+    }
+
+    <span class="pl-k">void</span> <span class="pl-en">exec</span>(<span class="pl-smi">Abonent</span> <span class="pl-v">abonent</span>) {
+        <span class="pl-k">if</span>(abonent instanceOf <span class="pl-smi">DBService</span>) {
+            exec((<span class="pl-smi">DBService</span>) abonent);
+        }
+    }
+
+    <span class="pl-k">abstract</span> <span class="pl-k">void</span> <span class="pl-en">exec</span>(<span class="pl-smi">DBService</span> <span class="pl-v">accountService</span>);
+}</pre></div>
+
+<h4>
+<a id="user-content-authenticate-message" class="anchor" href="#authenticate-message" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authenticate message</h4>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MsgAuthenticate</span> <span class="pl-k">extends</span> <span class="pl-e">MsgDB</span> {
+    <span class="pl-k">private</span> <span class="pl-smi">String</span> name;
+    <span class="pl-k">private</span> <span class="pl-smi">String</span> password; 
+    <span class="pl-k">private</span> <span class="pl-smi">String</span> sessionId;
+
+    <span class="pl-k">public</span> <span class="pl-en">MsgAuthenticate</span>(<span class="pl-smi">Address</span> <span class="pl-v">from</span>, <span class="pl-smi">Address</span> <span class="pl-v">to</span>, <span class="pl-smi">String</span> <span class="pl-v">name</span>, <span class="pl-smi">String</span> <span class="pl-v">password</span>, <span class="pl-smi">String</span> <span class="pl-v">sessionId</span>) {
+        <span class="pl-v">super</span>(from, to);
+        <span class="pl-v">this</span><span class="pl-k">.</span>name <span class="pl-k">=</span> name;
+        <span class="pl-v">this</span><span class="pl-k">.</span>password <span class="pl-k">=</span> password;
+        <span class="pl-v">this</span><span class="pl-k">.</span>sessionId <span class="pl-k">=</span> sessionId;
+    }
+
+    <span class="pl-k">void</span> <span class="pl-en">exec</span>(<span class="pl-smi">DBService</span> <span class="pl-v">dbService</span>) {
+        <span class="pl-smi">Account</span> result <span class="pl-k">=</span> dbService<span class="pl-k">.</span>auth(name, password);
+        <span class="pl-smi">Msg</span> back <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">MsgIsAuthenticated</span>(getTo(), getFrom(), sessionId, result);
+        dbService<span class="pl-k">.</span>getMessageSystem()<span class="pl-k">.</span>sendMessage(back);
+    }
+} </pre></div>
+
+<h4>
+<a id="user-content-Иерархия-сообщений" class="anchor" href="#%D0%98%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%8F-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Иерархия сообщений</h4>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/messages.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/messages.jpg" alt="" style="max-width:100%;"></a></p>
+
+<h4>
+<a id="user-content-messagesystem" class="anchor" href="#messagesystem" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MessageSystem</h4>
+
+<p>Класс, объект которого будет шарить между собой различные потоки. В 
+этом классе мы должны завести контейнер, в который мы будем складывать 
+сообщения. </p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Address - адрес того, кто будет получать</span>
+<span class="pl-c">// ConcurrentLinkedQueue - очередь (от абстрактных сообщений Msg) того, кто будет получать </span>
+<span class="pl-k">private</span> <span class="pl-k">final</span> <span class="pl-k">Map&lt;<span class="pl-smi">Address</span>, <span class="pl-k">ConcurrentLinkedQueue&lt;<span class="pl-smi">Msg</span>&gt;</span>&gt;</span> messages <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">HashMap&lt;<span class="pl-smi">Address</span>, <span class="pl-k">ConcurrentLinkedQueue&lt;<span class="pl-smi">Msg</span>&gt;</span>&gt;</span>();
+
+<span class="pl-c">/*</span>
+<span class="pl-c">* Добавление сообщения в карту.</span>
+<span class="pl-c">*/</span>
+<span class="pl-k">public</span> <span class="pl-k">void</span> sendMessage(<span class="pl-smi">Msg</span> message) {
+    <span class="pl-c">// находим нужную очередь </span>
+    <span class="pl-k">Queue&lt;<span class="pl-smi">Msg</span>&gt;</span> messageQueue <span class="pl-k">=</span> messages<span class="pl-k">.</span>get(message<span class="pl-k">.</span>getTo());
+    <span class="pl-c">// добавляем сообщение</span>
+    messageQueue<span class="pl-k">.</span>add(message);
+}
+
+<span class="pl-k">public</span> <span class="pl-k">void</span> execForAbonent(<span class="pl-smi">Abonent</span> abonent) {
+    <span class="pl-k">Queue&lt;<span class="pl-smi">Msg</span>&gt;</span> messageQueue <span class="pl-k">=</span> messages<span class="pl-k">.</span>get(abonent<span class="pl-k">.</span>getAddress());
+    <span class="pl-k">while</span>(<span class="pl-k">!</span>messageQueue<span class="pl-k">.</span>isEmpty()) {
+        <span class="pl-smi">Msg</span> message <span class="pl-k">=</span> messageQueue<span class="pl-k">.</span>poll();
+        message<span class="pl-k">.</span>exec(abonent);
+    }
+}</pre></div>
+
+<h4>
+<a id="user-content-Использование-messagesystem" class="anchor" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-messagesystem" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Использование MessageSystem</h4>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Frontend</span> <span class="pl-k">implements</span> <span class="pl-e">Abonent</span>, <span class="pl-e">Runnable</span> {
+    <span class="pl-k">private</span> <span class="pl-smi">MessageSystem</span> ms;
+    <span class="pl-c">// ...</span>
+
+    <span class="pl-k">public</span> <span class="pl-en">Frontend</span>(<span class="pl-smi">MessageSystem</span> <span class="pl-v">ms</span>) {
+        <span class="pl-v">this</span><span class="pl-k">.</span>ms <span class="pl-k">=</span> ms;
+    }
+    <span class="pl-c">// ...</span>
+
+    <span class="pl-k">@Override</span> 
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">run</span>() { 
+        <span class="pl-k">while</span>(<span class="pl-c1">true</span>) {
+            ms<span class="pl-k">.</span>execForAbonent(<span class="pl-v">this</span>);
+            <span class="pl-k">try</span> {
+                <span class="pl-smi">Thread</span><span class="pl-k">.</span>sleep(<span class="pl-c1">100</span>);
+            } <span class="pl-k">catch</span> (<span class="pl-c1">...</span>) { <span class="pl-c1">...</span> }
+        }
+    }
+}       </pre></div>
+
+<h4>
+<a id="user-content-Взаимодействие-frontend-с-accountservice" class="anchor" href="#%D0%92%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D0%B5-frontend-%D1%81-accountservice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Взаимодействие FrontEnd с AccountService</h4>
+
+<p>Разведем работу с пользователями по разным потокам. FrontEnd - поток,
+ который работает с пользователями. DBService - поток, который работает с
+ авторизацией. </p>
+
+<ol>
+<li>FronEnd создает пользовательскую сессию. </li>
+<li>FrontEnd возвращает созданную на основе сессии страницу в браузер.</li>
+<li>fronEnd запрашивает у DBService данные по авторизации.</li>
+<li>Когда данные приходят, frontEnd меняет состояние сессии.</li>
+</ol>
+
+<p><a href="file:///Users/KonstantinSysoev/Documents/Programming/Education/Stepic%20course/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0%20%D0%BD%D0%B0%20java/%D0%9C%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C/front_dbservice.jpg" target="_blank"><img src="%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8_files/front_dbservice.jpg" alt="" style="max-width:100%;"></a></p>
+</article></body></html>
