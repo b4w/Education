@@ -44,7 +44,7 @@ db.populations.find()
 	city:"Minsk",
 	population:183700
 }
-```
+```l
 
 Можно создавать "переменные" JSON и затем вставлять их в БД
 ```
